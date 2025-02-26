@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+<head>
+    <title>Color Palette</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <style>
+        .color-swatch {
+            width: 100%;
+            height: 60px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .color-info {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Color Palette</h2>
+        <div class="row">
+            {% for color, name, description in colors %}
+            <div class="col-md-3 mb-4">
+                <div class="card">
+                    <div class="color-swatch" style="background-color: {{ color }};"></div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ name }}</h5>
+                        <p class="card-text">
+                            <small class="text-muted">{{ description }}</small><br>
+                            <code>{{ color }}</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
